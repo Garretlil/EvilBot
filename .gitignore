@@ -1,0 +1,29 @@
+# Secrets: only the empty example is tracked
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+id_rsa*
+webapp_key*
+
+# User data and runtime state
+data/
+*.sqlite
+*.sqlite3
+*.sqlite-wal
+*.sqlite-shm
+*.db
+*.log
+
+# Local environments and generated files
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.DS_Store
+*.bak
+
+# Dataset applications require separate sharing permission
+/tests/fixtures/pitch-dataset.md

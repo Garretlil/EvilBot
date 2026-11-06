@@ -1,0 +1,21 @@
+[Unit]
+Description=Evil Investor startup rehearsal
+After=network-online.target
+Wants=network-online.target
+[Service]
+User=user1
+Group=user1
+WorkingDirectory=/home/user1/evil-investor
+ExecStart=/usr/bin/python3 /home/user1/evil-investor/server.py
+Restart=on-failure
+RestartSec=3
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=read-only
+ReadWritePaths=/home/user1/evil-investor/data
+UMask=0077
+MemoryMax=512M
+TasksMax=64
+[Install]
+WantedBy=multi-user.target
